@@ -78,9 +78,9 @@ class DigitalTimer extends Component {
         <div className="second-main-container">
           <div className="timer-bg">
             <div className="timer-text-container">
-              <p className="timer-text">
+              <h1 className="timer-text">
                 {minutesInFormat}:{secondsInFormat}
-              </p>
+              </h1>
               <p className="timer-state-text">
                 {isRunning ? 'Running' : 'Paused'}
               </p>
@@ -100,12 +100,15 @@ class DigitalTimer extends Component {
                 />
                 {isRunning ? 'Pause' : 'Start'}
               </button>
-              <button type="button" className="start-pause-buttons">
+              <button
+                type="button"
+                className="start-pause-buttons"
+                onClick={this.resetTimer}
+              >
                 <img
                   src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
                   alt="reset icon"
                   className="button-img"
-                  onClick={this.resetTimer}
                 />
                 Reset
               </button>
